@@ -48,9 +48,9 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = main3.c 
-OBJECTS       = main3.o
-DIST          = CTests.pro  main3.c
+SOURCES       = main.c 
+OBJECTS       = main.o
+DIST          = CTests.pro  main.c
 QMAKE_TARGET  = CTests
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = CTests
@@ -372,8 +372,8 @@ compiler_clean:
 
 ####### Compile
 
-main3.o: main3.c 
-	$(CC) -c $(CFLAGS) $(INCPATH) -o main3.o main3.c
+main.o: main.c 
+	$(CC) -c $(CFLAGS) $(INCPATH) -o main.o main.c
 
 ####### Install
 
