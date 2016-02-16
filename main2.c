@@ -85,7 +85,7 @@ int cat(char ***dest, char *src)
 
         if(/**tmpArrayPointer*/ *dest==NULL)
         {
-            //allocate each element of string in the stringArray
+            //initialize stringArray with 1 string (1 character array)
             *dest = (char**)malloc(totalstrings*sizeof(char*));
         }
         else
@@ -100,10 +100,10 @@ int cat(char ***dest, char *src)
 //        fgets(src,51,stdin);
 
         int index=totalstrings-1;
-        //each string itself
-        (*dest)[index]=(char*)malloc((strlen(src)+1)*sizeof(char*));
+        //each string(character array) itself
+        (*dest)[index]=(char*)malloc((strlen(src)+1)*sizeof(char));
+
+        //copy to each index of the string array 1 string (character array) each time
         strcpy((*dest)[index],src);
-
-
 
 }
