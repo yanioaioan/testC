@@ -4,12 +4,11 @@
 
 int reverse(char **dest, char source[]);
 
+
 int main(void)
 {
   char name_array[]="My name";
-  char *reversed_name=NULL;
-
-  reversed_name=(char*)malloc(sizeof(name_array)*sizeof(char));
+  char *reversed_name=(char*)malloc(sizeof(name_array)*sizeof(char));
 
   printf("name: %s\n",name_array);
   if(reverse(&reversed_name,name_array))
@@ -39,16 +38,33 @@ int reverse(char **dest, char source[])
     }
 
     int start=0;
-    int i=stringSize;
+    int i=stringSize-1;
 
     //iterate from end to start on the tmpName..&..save at 0...till stringSize on tmpName
-    while ( i>0)
+    while (i>=0)
     {
-        i--;
+
         //store character
         (*dest)[start++]=tmpName[i];
+        i--;
     }
-
 
   return start;
 }
+
+
+
+
+//#include <stdio.h>
+//static void func(char **p)
+//{
+//    p[0] = "Hello";
+//    p[1] = "World";
+//}
+//int main(int argc, char *argv[])
+//{
+//    char *strings[2];
+//    func(strings);
+//    printf("%s %s\n", strings[0], strings[1]);
+//    return 0;
+//}
