@@ -4,11 +4,12 @@
 
 int reverse(char **dest, char source[]);
 
-
 int main(void)
 {
   char name_array[]="My name";
-  char *reversed_name=(char*)malloc(sizeof(name_array)*sizeof(char));
+  char *reversed_name=NULL;
+
+  reversed_name=(char*)malloc(sizeof(name_array)*sizeof(char));
 
   printf("name: %s\n",name_array);
   if(reverse(&reversed_name,name_array))
@@ -23,48 +24,26 @@ int main(void)
 
 int reverse(char **dest, char source[])
 {
-    //save string size (in advance cause it gets smaller as we +=1 iterate on it-might be a cause of logical error further down)
-    int stringSize=strlen(source);
-    char tmpName[stringSize];
-    int charposition=0;
-
+    int counter=0;
+    char tmpName[10];
     while(*source !='\0')
     {
-        //iterate source & store character by character to tmpName array
-        tmpName[charposition++]=*source;
-        //move to next character
+
+//        (*dest)[counter]=*source;
+        tmpName[counter]=*source;
         source+=1;
-
+        counter+=1;
     }
 
+    int i=counter;
     int start=0;
-    int i=stringSize-1;
-
-    //iterate from end to start on the tmpName..&..save at 0...till stringSize on tmpName
-    while (i>=0)
+    while ( i>0)
     {
-
-        //store character
-        (*dest)[start++]=tmpName[i];
         i--;
+        (*dest)[start++]=tmpName[i];
+
     }
 
-  return start;
+
+  return 1;
 }
-
-
-
-
-//#include <stdio.h>
-//static void func(char **p)
-//{
-//    p[0] = "Hello";
-//    p[1] = "World";
-//}
-//int main(int argc, char *argv[])
-//{
-//    char *strings[2];
-//    func(strings);
-//    printf("%s %s\n", strings[0], strings[1]);
-//    return 0;
-//}

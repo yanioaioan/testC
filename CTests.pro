@@ -4,8 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 #SOURCES += main.c
-SOURCES += main2.c
-#SOURCES += main3.c
+#SOURCES += main2.c
+#SOURCES +=TestStructSizes.c
+#SOURCES +=fileprint.c
+SOURCES +=ceasarExtension.c
 
-
-
+OTHER_FILES += \
+    sourceToEncode.txt \
+    sourceToDecode.txt \
+    destination.txt
