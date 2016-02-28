@@ -48,9 +48,9 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ceasarExtension.c 
-OBJECTS       = ceasarExtension.o
-DIST          = CTests.pro  ceasarExtension.c
+SOURCES       = encodeDecode.c 
+OBJECTS       = encodeDecode.o
+DIST          = CTests.pro  encodeDecode.c
 QMAKE_TARGET  = CTests
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = CTests
@@ -232,8 +232,8 @@ compiler_clean:
 
 ####### Compile
 
-ceasarExtension.o: ceasarExtension.c 
-	$(CC) -c $(CFLAGS) $(INCPATH) -o ceasarExtension.o ceasarExtension.c
+encodeDecode.o: encodeDecode.c 
+	$(CC) -c $(CFLAGS) $(INCPATH) -o encodeDecode.o encodeDecode.c
 
 ####### Install
 

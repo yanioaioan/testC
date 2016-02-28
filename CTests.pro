@@ -7,7 +7,8 @@ CONFIG -= qt
 #SOURCES += main2.c
 #SOURCES +=TestStructSizes.c
 #SOURCES +=fileprint.c
-SOURCES +=ceasarExtension.c
+#SOURCES +=ceasarExtension.c
+SOURCES +=encodeDecode.c
 
 OTHER_FILES += \
     sourceToEncode.txt \
