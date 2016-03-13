@@ -9,9 +9,16 @@ CONFIG -= qt
 #SOURCES +=fileprint.c
 #SOURCES +=ceasarExtension.c
 #SOURCES +=encodeDecode.c
-SOURCES +=primeNumbers.c
+#SOURCES +=primeNumbers.c
+SOURCES +=today.c \
+    set.c
+
+LIBS += -L ./ -lSet
 
 OTHER_FILES += \
     sourceToEncode.txt \
     sourceToDecode.txt \
     destination.txt
+
+HEADERS += \
+    set.h

@@ -36,7 +36,7 @@ DISTNAME      = CTests1.0.0
 DISTDIR = /media/yanioaioan/cd89ced7-2671-4393-ba84-b98ce8259c27/yanioaioan/CTests/.tmp/CTests1.0.0
 LINK          = g++
 LFLAGS        = -m64
-LIBS          = $(SUBLIBS)  
+LIBS          = $(SUBLIBS) -L ./ -lSet 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -48,8 +48,10 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = primeNumbers.c 
-OBJECTS       = primeNumbers.o
+SOURCES       = today.c \
+		set.c 
+OBJECTS       = today.o \
+		set.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -103,7 +105,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		CTests.pro  primeNumbers.c
+		CTests.pro set.h today.c \
+		set.c
 QMAKE_TARGET  = CTests
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = CTests
@@ -283,8 +286,11 @@ compiler_clean:
 
 ####### Compile
 
-primeNumbers.o: primeNumbers.c 
-	$(CC) -c $(CFLAGS) $(INCPATH) -o primeNumbers.o primeNumbers.c
+today.o: today.c set.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o today.o today.c
+
+set.o: set.c set.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o set.o set.c
 
 ####### Install
 
