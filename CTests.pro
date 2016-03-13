@@ -10,8 +10,8 @@ CONFIG -= qt
 #SOURCES +=ceasarExtension.c
 #SOURCES +=encodeDecode.c
 #SOURCES +=primeNumbers.c
-SOURCES +=today.c \
-    set.c
+SOURCES +=today.c
+
 
 LIBS += -L ./ -lSet
 
@@ -20,5 +20,3 @@ OTHER_FILES += \
     sourceToDecode.txt \
     destination.txt
 
-HEADERS += \
-    set.h

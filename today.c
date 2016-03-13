@@ -3,8 +3,6 @@
 #include "set.h"
 
 
-
-
 int main(void)
 {
 //  time_t today;
@@ -34,11 +32,6 @@ int main(void)
       printf("%s is a weekday",my_weekday[dayindex]);
   else if (set_inclusion(dayindex,weekend))
       printf("%s is a weekend",my_weekday[dayindex]);
-
-
-
-
-
 
   return 0;
 }
